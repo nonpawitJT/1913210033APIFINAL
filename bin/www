@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('1913210033-express:server');
+var debug = require('debug')('FINAL API:server');
 var http = require('http');
 const config = require('../config/index')
 
