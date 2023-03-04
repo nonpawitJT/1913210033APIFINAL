@@ -1,4 +1,7 @@
 const Brand = require('../models/brand')
+
+const { validationResult } = require('express-validator');
+
 exports.all = async (req, res, next) => {
 
   const brand = await Brand.find().sort({ _id: -1 })
