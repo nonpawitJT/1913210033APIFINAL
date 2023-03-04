@@ -14,7 +14,7 @@ router.put('/:id',[passportJWT.isLogin,checkAdmin.isAdmin], productController.up
 router.get('/brandproduct/:id', productController.prodbyidBrand);
 
 
-router.post('/', [
+router.post('/', [passportJWT.isLogin,checkAdmin.isAdmin,
     body("product_name").not().isEmpty().withMessage("กรุณากรอกชื่อสินค้า"),
     body("brand").not().isEmpty().withMessage("กรุณากรอกไอดี Brand "),
     body("price").not().isEmpty().withMessage("กรุณากรอกราคาสินค้า ").isNumeric().withMessage("ราคาสินค้าต้องเป็นตัวเลขเท่านั้น"),
